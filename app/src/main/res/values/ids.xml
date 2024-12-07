@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="movieName" type="id">movename</item>
+    <item name="movieImage" type="id">moveimage</item>
+    <item name="movieDescription" type="id">movedescripton</item>
+    <item name="movieDetails" type="id">movedetails</item>
+    <item name="publishDate" type="id">publishdate</item>
+    <item name="rate" type="id">rate</item>
+</resources>
