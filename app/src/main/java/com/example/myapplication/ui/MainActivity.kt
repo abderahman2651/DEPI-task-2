@@ -11,8 +11,8 @@ import com.example.myapplication.R
 
 class MainActivity : AppCompatActivity() {
 
-     val username : String = "abderahman"
-     val password : String = "abdo123abdo"
+    val username: String = "abderahman"
+    val password: String = "abdo123abdo"
 
     lateinit var etd_username: EditText
     lateinit var etd_password: EditText
@@ -27,30 +27,19 @@ class MainActivity : AppCompatActivity() {
         etd_password = findViewById(R.id.edt_password)
         btn_login = findViewById(R.id.btn_login)
         btn_login.setOnClickListener {
-            if(!etd_username.text.toString().isNullOrEmpty() && !etd_password.text.toString().isNullOrEmpty()){
-                if (etd_username.text.toString().equals(username) && etd_password.text.toString().equals(password)){
-                    Toast.makeText(this , "Login successful" , Toast.LENGTH_LONG).show()
+            if (!etd_username.text.toString().isNullOrEmpty() && !etd_password.text.toString().isNullOrEmpty()) {
+                if (etd_username.text.toString() == username && etd_password.text.toString() == password) {
+                    Toast.makeText(this, "Login successful", Toast.LENGTH_LONG).show()
 
-                    var intent:Intent = Intent(this , secondActivity::class.java)
-                    intent.putExtra("username" , etd_username.text.toString())
+                    val intent = Intent(this, secondActivity::class.java)
+                    intent.putExtra("username", etd_username.text.toString())
                     startActivity(intent)
+                } else {
+                    Toast.makeText(this, "Invalid credentials", Toast.LENGTH_LONG).show()
                 }
+            } else {
+                Toast.makeText(this, "Please enter both username and password", Toast.LENGTH_LONG).show()
             }
         }
     }
-
-//     override fun onClick(v: View?) {
-//
-//         when(v!!.id){
-//             R.id.btn_login -> {
-//                 Toast.makeText(this , "Login Button Clicked" , Toast.LENGTH_LONG).show()
-//             }
-//         }
-//
-//
-//     }
-
-//    fun onClicklogin(view : View){
-//        Toast.makeText(this , "Login Button Clicked" , Toast.LENGTH_LONG).show()
-//    }
 }
